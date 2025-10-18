@@ -61,7 +61,7 @@ const Index = () => {
         <source src="https://poehali.dev/i-love-you-fontaines.mp3" type="audio/mpeg" />
       </audio>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className={`absolute inset-0 overflow-hidden pointer-events-none transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         {petals.map((petal, index) => (
           <div
             key={`petal-${index}`}
@@ -79,7 +79,7 @@ const Index = () => {
         ))}
       </div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className={`absolute inset-0 overflow-hidden pointer-events-none transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         {floatingHearts.map((heart, index) => (
           <div
             key={index}
@@ -96,16 +96,16 @@ const Index = () => {
         ))}
       </div>
 
-      <div className="absolute top-4 left-4 md:top-10 md:left-10 animate-float">
+      <div className={`absolute top-4 left-4 md:top-10 md:left-10 animate-float transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         <img src="https://cdn.poehali.dev/projects/6ab0a839-b403-4b9b-8d8b-c3379a15d32a/files/38edb3fa-1c93-4f0a-b23e-8dc36f5a1ada.jpg" alt="" className="w-12 h-12 md:w-20 md:h-20 rounded-full opacity-40" />
       </div>
-      <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 animate-float-slow">
+      <div className={`absolute bottom-10 right-10 md:bottom-20 md:right-20 animate-float-slow transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         <span className="text-4xl md:text-6xl opacity-25">💖</span>
       </div>
-      <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 animate-fade-in">
+      <div className={`hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 animate-fade-in transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         <img src="https://cdn.poehali.dev/projects/6ab0a839-b403-4b9b-8d8b-c3379a15d32a/files/10de1987-4b8f-43c7-987d-217f79d5f013.jpg" alt="" className="w-48 h-48 rounded-2xl opacity-20" />
       </div>
-      <div className="absolute bottom-20 left-10 md:bottom-40 md:left-32 animate-float-slow">
+      <div className={`absolute bottom-20 left-10 md:bottom-40 md:left-32 animate-float-slow transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         <span className="text-4xl md:text-6xl opacity-25">💗</span>
       </div>
 
@@ -217,7 +217,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-8 md:mt-24 flex justify-center gap-3 md:gap-5 flex-wrap opacity-60">
+        <div className={`mt-8 md:mt-24 flex justify-center gap-3 md:gap-5 flex-wrap opacity-60 transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
           <span className="text-3xl md:text-5xl animate-float">💗</span>
           <span className="text-2xl md:text-4xl animate-float-slow">💓</span>
           <span className="text-3xl md:text-5xl animate-float">💞</span>
