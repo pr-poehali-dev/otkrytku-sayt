@@ -138,24 +138,40 @@ const Index = () => {
               ></div>
 
               <div
-                className={`absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 w-[90%] sm:w-[88%] md:w-[85%] h-[200px] sm:h-[240px] md:h-[280px] bg-gradient-to-br from-amber-50/98 to-pink-50/98 shadow-2xl p-4 sm:p-6 md:p-8 transition-all duration-800 border border-pink-300/40 ${
+                className={`absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 w-[90%] sm:w-[88%] md:w-[85%] max-h-[85vh] sm:max-h-[500px] md:max-h-[600px] overflow-y-auto bg-gradient-to-br from-amber-50/98 to-pink-50/98 shadow-2xl p-4 sm:p-6 md:p-8 transition-all duration-800 border border-pink-300/40 ${
                   isOpen ? 'translate-y-[-120px] sm:translate-y-[-150px] md:translate-y-[-180px] opacity-100 z-10' : 'translate-y-0 opacity-0 z-0'
                 }`}
+                style={{ 
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: 'rgba(255,182,193,0.3) transparent'
+                }}
               >
-                <div className="font-serif text-gray-700 space-y-1.5 sm:space-y-2 md:space-y-3 h-full flex flex-col justify-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-rose-700" style={{ textShadow: '0 0 15px rgba(255,182,193,0.4)' }}>
-                    Моя любимая
+                <div className="font-serif text-gray-700 space-y-2 sm:space-y-3 md:space-y-4" style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}>
+                  <p className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-rose-700" style={{ textShadow: '0 0 15px rgba(255,182,193,0.4)' }}>
+                    Моя дорогая Вероничка
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center text-gray-700">
-                    Каждый день с тобой — это волшебство. Ты делаешь мою жизнь ярче, теплее и прекраснее.
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700">
+                    За такое малое время ты стала мне безумно близкой и дорогой. Я хочу поздравить тебя с нашим праздником должным образом и сказать тебе, что я до жути люблю тебя.
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center text-gray-700">
-                    Спасибо за каждую улыбку, каждый момент счастья. Я люблю тебя больше, чем слова могут выразить.
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700">
+                    Я могу говорить тебе об этом вечно, но никогда не смогу передать тех чувств, что действительно ощущаю к тебе.
                   </p>
-                  <div className="text-center mt-2 sm:mt-3 md:mt-4 flex justify-center gap-2 sm:gap-3">
-                    <span className="text-2xl sm:text-2xl md:text-3xl animate-float">❤️</span>
-                    <span className="text-2xl sm:text-2xl md:text-3xl animate-float-slow">💕</span>
-                    <span className="text-2xl sm:text-2xl md:text-3xl animate-float">💖</span>
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700">
+                    Ты самый яркий лучик солнца в моей жизни, даже пару минут без тебя сводят меня с ума. Если бы мне сказали раньше о том, что я встречу такую замечательную девочку, то я бы не поверила, ведь ты просто идеальна в моих глазах.
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700">
+                    С каждым днем я чувствую все больше теплых чувств к тебе, хотя казалось бы, куда еще больше. Я очень хочу, чтобы все и дальше у нас было хорошо.
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700">
+                    Прости меня за мои косяки с пустого места и прости, что я все так близко принимаю к сердцу.
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-center text-gray-700 font-semibold">
+                    Я очень люблю тебя, моя дорогая. С нашим днем, принцесса 💖
+                  </p>
+                  <div className="text-center mt-3 sm:mt-4 md:mt-5 flex justify-center gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl md:text-3xl animate-float">❤️</span>
+                    <span className="text-xl sm:text-2xl md:text-3xl animate-float-slow">💕</span>
+                    <span className="text-xl sm:text-2xl md:text-3xl animate-float">💖</span>
                   </div>
                 </div>
               </div>
