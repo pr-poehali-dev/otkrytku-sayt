@@ -167,12 +167,13 @@ const Index = () => {
               ></div>
 
               <div
-                className={`absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 w-[90%] sm:w-[88%] md:w-[85%] max-h-[85vh] sm:max-h-[500px] md:max-h-[600px] overflow-y-auto bg-gradient-to-br from-amber-50/98 to-pink-50/98 shadow-2xl p-4 sm:p-6 md:p-8 transition-all duration-800 border border-pink-300/40 ${
+                className={`absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 w-[90%] sm:w-[88%] md:w-[85%] max-h-[85vh] sm:max-h-[500px] md:max-h-[600px] overflow-y-auto bg-white shadow-2xl p-4 sm:p-6 md:p-8 transition-all duration-800 border border-pink-300/40 ${
                   isOpen ? 'translate-y-[-120px] sm:translate-y-[-150px] md:translate-y-[-180px] opacity-100 z-10' : 'translate-y-0 opacity-0 z-0'
                 }`}
                 style={{ 
                   scrollbarWidth: 'thin',
-                  scrollbarColor: 'rgba(255,182,193,0.3) transparent'
+                  scrollbarColor: 'rgba(255,182,193,0.3) transparent',
+                  boxShadow: '0 10px 40px rgba(0,0,0,0.2), 0 0 20px rgba(255,182,193,0.3)'
                 }}
               >
                 <div className="font-serif text-gray-700 space-y-2 sm:space-y-3 md:space-y-4" style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}>
