@@ -1,7 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (isOpen && audioRef.current) {
+      audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+    } else if (!isOpen && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [isOpen]);
+
+  const petals = Array.from({ length: 20 }, (_, i) => ({
+    left: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 5}s`,
+    duration: `${8 + Math.random() * 6}s`,
+    size: `${15 + Math.random() * 20}px`,
+  }));
 
   const floatingHearts = [
     { size: 'text-4xl', delay: '0s', left: '10%', duration: '3s' },
@@ -24,6 +41,28 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-red-50 via-rose-100 to-red-100">
+      <audio ref={audioRef} loop>
+        <source src="https://poehali.dev/samyy-dorogoy-chelovek.mp3" type="audio/mpeg" />
+      </audio>
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {petals.map((petal, index) => (
+          <div
+            key={`petal-${index}`}
+            className="absolute text-rose-600 opacity-70"
+            style={{
+              left: petal.left,
+              top: '-10%',
+              fontSize: petal.size,
+              animation: `petal-fall ${petal.duration} linear infinite, petal-sway 3s ease-in-out infinite`,
+              animationDelay: `${petal.delay}, ${petal.delay}`,
+            }}
+          >
+            🌹
+          </div>
+        ))}
+      </div>
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {floatingHearts.map((heart, index) => (
           <div
@@ -107,10 +146,13 @@ const Index = () => {
                   <p className="text-3xl font-semibold text-center bg-gradient-to-r from-red-700 to-rose-600 bg-clip-text text-transparent">
                     Моя любимая
                   </p>
-                  <p className="text-lg leading-relaxed text-center">
-                    Каждый день с тобой — это волшебство. Ты делаешь мою жизнь ярче, теплее и прекраснее.
-                  </p>
-                  <p className="text-lg leading-relaxed text-center">
+                  <div className="italic text-base leading-relaxed text-center text-gray-600 space-y-2">
+                    <p>Ты самый дорогой человек</p>
+                    <p>И пусть всё будет хорошо</p>
+                    <p>Я не готов тебя терять</p>
+                    <p>Прошу, не отпускай меня</p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-center mt-3">
                     Спасибо за каждую улыбку, каждый момент счастья. Я люблю тебя больше, чем слова могут выразить.
                   </p>
                   <div className="text-center mt-4 flex justify-center gap-3">

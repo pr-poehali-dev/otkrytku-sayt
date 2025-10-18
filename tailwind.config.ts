@@ -108,6 +108,14 @@ export default {
 				'letter-rise': {
 					'0%': { transform: 'translateY(0)' },
 					'100%': { transform: 'translateY(-120px)' }
+				},
+				'petal-fall': {
+					'0%': { transform: 'translateY(-10%) rotateZ(0deg)', opacity: '0.8' },
+					'100%': { transform: 'translateY(110vh) rotateZ(360deg)', opacity: '0' }
+				},
+				'petal-sway': {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'50%': { transform: 'translateX(20px)' }
 				}
 			},
 			animation: {
@@ -118,7 +126,9 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'shimmer': 'shimmer 3s linear infinite',
 				'envelope-open': 'envelope-open 0.8s ease-out forwards',
-				'letter-rise': 'letter-rise 0.8s ease-out forwards'
+				'letter-rise': 'letter-rise 0.8s ease-out forwards',
+				'petal-fall': 'petal-fall linear infinite',
+				'petal-sway': 'petal-sway 3s ease-in-out infinite'
 			}
 		}
 	},
