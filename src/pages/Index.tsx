@@ -1,11 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [burstHearts, setBurstHearts] = useState<Array<{id: number, x: string, y: string, delay: string}>>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (isOpen) {
+      if (audioRef.current) {
+        audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+      }
+      
       const hearts = Array.from({ length: 15 }, (_, i) => {
         const angle = (Math.PI * 2 * i) / 15;
         const distance = 150 + Math.random() * 100;
@@ -20,6 +25,10 @@ const Index = () => {
       
       setTimeout(() => setBurstHearts([]), 2000);
     } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       setBurstHearts([]);
     }
   }, [isOpen]);
@@ -52,6 +61,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#5a2e3e] via-[#6b3d4d] to-[#4a2533]">
+      <audio ref={audioRef} loop>
+        <source src="/i-love-you.mp3" type="audio/mpeg" />
+      </audio>
+
       <div className={`absolute inset-0 overflow-hidden pointer-events-none transition-opacity duration-500 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
         {petals.map((petal, index) => (
           <div
