@@ -94,7 +94,7 @@ const Index = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 animate-fade-in flex flex-col items-center justify-center min-h-screen">
-        <h1 className="font-serif text-6xl md:text-8xl font-bold mb-16 bg-gradient-to-r from-pink-200 via-rose-200 to-pink-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] drop-shadow-lg">
+        <h1 className="font-serif text-6xl md:text-8xl font-bold mb-16 text-pink-100 animate-shimmer drop-shadow-[0_0_30px_rgba(255,182,193,0.6)]" style={{ textShadow: '0 0 40px rgba(255,182,193,0.5), 0 0 20px rgba(255,182,193,0.3)' }}>
           С нашим днём, киса
         </h1>
 
@@ -105,9 +105,9 @@ const Index = () => {
             }`}
             onClick={() => setIsOpen(!isOpen)}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-100/90 to-pink-200/90 rounded-sm shadow-2xl backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-rose-200/40 to-pink-300/40 rounded-sm shadow-2xl backdrop-blur-md" style={{ boxShadow: '0 0 60px rgba(255,182,193,0.4), 0 20px 40px rgba(0,0,0,0.3)' }}>
               <div 
-                className="absolute top-0 left-0 w-full h-[175px] bg-gradient-to-br from-rose-300/80 via-pink-300/80 to-rose-400/80 clip-triangle shadow-lg"
+                className="absolute top-0 left-0 w-full h-[175px] bg-gradient-to-br from-rose-400/50 via-pink-400/50 to-rose-500/50 clip-triangle shadow-lg"
                 style={{
                   transformOrigin: 'top center',
                   transform: isOpen ? 'rotateX(-180deg)' : 'rotateX(0deg)',
@@ -122,7 +122,7 @@ const Index = () => {
               </div>
 
               <div 
-                className="absolute bottom-0 left-0 w-1/2 h-[175px] bg-gradient-to-br from-rose-400/70 to-pink-400/70"
+                className="absolute bottom-0 left-0 w-1/2 h-[175px] bg-gradient-to-br from-rose-500/50 to-pink-500/50"
                 style={{
                   clipPath: 'polygon(0 100%, 100% 0, 0 0)',
                   zIndex: 2,
@@ -130,7 +130,7 @@ const Index = () => {
               ></div>
               
               <div 
-                className="absolute bottom-0 right-0 w-1/2 h-[175px] bg-gradient-to-bl from-rose-400/70 to-pink-400/70"
+                className="absolute bottom-0 right-0 w-1/2 h-[175px] bg-gradient-to-bl from-rose-500/50 to-pink-500/50"
                 style={{
                   clipPath: 'polygon(100% 100%, 100% 0, 0 0)',
                   zIndex: 2,
@@ -138,18 +138,18 @@ const Index = () => {
               ></div>
 
               <div
-                className={`absolute top-8 left-1/2 -translate-x-1/2 w-[85%] h-[280px] bg-gradient-to-br from-pink-50/95 to-rose-50/95 shadow-2xl p-8 transition-all duration-800 border border-pink-200/50 ${
+                className={`absolute top-8 left-1/2 -translate-x-1/2 w-[85%] h-[280px] bg-gradient-to-br from-amber-50/98 to-pink-50/98 shadow-2xl p-8 transition-all duration-800 border border-pink-300/40 ${
                   isOpen ? 'translate-y-[-180px] opacity-100 z-10' : 'translate-y-0 opacity-0 z-0'
                 }`}
               >
-                <div className="font-serif text-gray-800 space-y-3 h-full flex flex-col justify-center">
-                  <p className="text-3xl font-semibold text-center bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent">
+                <div className="font-serif text-gray-700 space-y-3 h-full flex flex-col justify-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}>
+                  <p className="text-3xl font-semibold text-center text-rose-700" style={{ textShadow: '0 0 15px rgba(255,182,193,0.4)' }}>
                     Моя любимая
                   </p>
-                  <p className="text-lg leading-relaxed text-center">
+                  <p className="text-lg leading-relaxed text-center text-gray-700">
                     Каждый день с тобой — это волшебство. Ты делаешь мою жизнь ярче, теплее и прекраснее.
                   </p>
-                  <p className="text-lg leading-relaxed text-center">
+                  <p className="text-lg leading-relaxed text-center text-gray-700">
                     Спасибо за каждую улыбку, каждый момент счастья. Я люблю тебя больше, чем слова могут выразить.
                   </p>
                   <div className="text-center mt-4 flex justify-center gap-3">
@@ -162,7 +162,7 @@ const Index = () => {
 
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-center z-20">
                 {!isOpen && (
-                  <p className="font-serif text-2xl text-pink-200 animate-pulse font-semibold drop-shadow-md">
+                  <p className="font-serif text-2xl text-pink-100 animate-pulse font-semibold" style={{ textShadow: '0 0 20px rgba(255,182,193,0.8), 0 0 10px rgba(255,182,193,0.5)' }}>
                     Нажми, чтобы открыть 💝
                   </p>
                 )}
