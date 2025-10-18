@@ -42,7 +42,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-red-50 via-rose-100 to-red-100">
       <audio ref={audioRef} loop>
-        <source src="https://poehali.dev/samyy-dorogoy-chelovek.mp3" type="audio/mpeg" />
+        <source src="https://poehali.dev/i-love-you-fontaines.mp3" type="audio/mpeg" />
       </audio>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -146,13 +146,10 @@ const Index = () => {
                   <p className="text-3xl font-semibold text-center bg-gradient-to-r from-red-700 to-rose-600 bg-clip-text text-transparent">
                     Моя любимая
                   </p>
-                  <div className="italic text-base leading-relaxed text-center text-gray-600 space-y-2">
-                    <p>Ты самый дорогой человек</p>
-                    <p>И пусть всё будет хорошо</p>
-                    <p>Я не готов тебя терять</p>
-                    <p>Прошу, не отпускай меня</p>
-                  </div>
-                  <p className="text-lg leading-relaxed text-center mt-3">
+                  <p className="text-lg leading-relaxed text-center">
+                    Каждый день с тобой — это волшебство. Ты делаешь мою жизнь ярче, теплее и прекраснее.
+                  </p>
+                  <p className="text-lg leading-relaxed text-center">
                     Спасибо за каждую улыбку, каждый момент счастья. Я люблю тебя больше, чем слова могут выразить.
                   </p>
                   <div className="text-center mt-4 flex justify-center gap-3">
