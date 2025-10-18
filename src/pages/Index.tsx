@@ -2,14 +2,30 @@ import { useState, useEffect, useRef } from 'react';
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [burstHearts, setBurstHearts] = useState<Array<{id: number, x: string, y: string, delay: string}>>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (isOpen && audioRef.current) {
       audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+      
+      const hearts = Array.from({ length: 15 }, (_, i) => {
+        const angle = (Math.PI * 2 * i) / 15;
+        const distance = 150 + Math.random() * 100;
+        return {
+          id: i,
+          x: `${Math.cos(angle) * distance}px`,
+          y: `${Math.sin(angle) * distance}px`,
+          delay: `${i * 0.05}s`
+        };
+      });
+      setBurstHearts(hearts);
+      
+      setTimeout(() => setBurstHearts([]), 2000);
     } else if (!isOpen && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      setBurstHearts([]);
     }
   }, [isOpen]);
 
@@ -99,6 +115,19 @@ const Index = () => {
         </h1>
 
         <div className="relative" style={{ perspective: '1500px' }}>
+          {burstHearts.map((heart) => (
+            <div
+              key={heart.id}
+              className="absolute top-1/2 left-1/2 pointer-events-none z-50"
+              style={{
+                '--tx': heart.x,
+                '--ty': heart.y,
+                animationDelay: heart.delay,
+              } as React.CSSProperties}
+            >
+              <span className="text-4xl animate-heart-burst">💖</span>
+            </div>
+          ))}
           <div
             className={`relative w-[320px] h-[240px] sm:w-[400px] sm:h-[280px] md:w-[500px] md:h-[350px] mx-auto cursor-pointer transition-all duration-500 ${
               isOpen ? 'transform' : ''

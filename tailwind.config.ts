@@ -116,6 +116,11 @@ export default {
 				'petal-sway': {
 					'0%, 100%': { transform: 'translateX(0)' },
 					'50%': { transform: 'translateX(20px)' }
+				},
+				'heart-burst': {
+					'0%': { transform: 'translate(-50%, -50%) scale(0)', opacity: '1' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translate(var(--tx), var(--ty)) scale(1)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -128,7 +133,8 @@ export default {
 				'envelope-open': 'envelope-open 0.8s ease-out forwards',
 				'letter-rise': 'letter-rise 0.8s ease-out forwards',
 				'petal-fall': 'petal-fall linear infinite',
-				'petal-sway': 'petal-sway 3s ease-in-out infinite'
+				'petal-sway': 'petal-sway 3s ease-in-out infinite',
+				'heart-burst': 'heart-burst 1.5s ease-out forwards'
 			}
 		}
 	},
